@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 380015623}
+  words:
+  - {fileID: 802769297}
 --- !u!1 &85323161
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 1990274914}
+  words:
+  - {fileID: 802769297}
 --- !u!1 &222995912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 873503587}
+  words:
+  - {fileID: 802769297}
 --- !u!1 &1550976761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,3 +2683,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 1961478586}
+  words:
+  - {fileID: 802769297}
