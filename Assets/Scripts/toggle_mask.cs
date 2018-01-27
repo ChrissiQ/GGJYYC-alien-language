@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class toggle_mask : MonoBehaviour {
 
 	public Image mask;
+	public GameObject[] words;
 
 	// Use this for initialization
 	void Start () {
 		Button button = GetComponent<Button>();
 		button.onClick.AddListener( () => {
-			mask.enabled = true;
+			foreach (GameObject word in words)
+			{
+				word.GetComponent<WordController>().EnablePartialMask(mask);
+			}
 		} );
 	}
 	
