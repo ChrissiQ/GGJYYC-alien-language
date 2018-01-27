@@ -7,8 +7,6 @@ public class WordController : MonoBehaviour {
 
 	public List<Image> masks;
 
-	public Image maskComplete;
-
 	// Use this for initialization
 	void Start () {
 
@@ -34,6 +32,7 @@ public class WordController : MonoBehaviour {
 		} else {
 			if (masks[masks.IndexOf(mask)-1].enabled && !mask.enabled) {
 				mask.enabled = true;
+				masks.ForEach(x => x.color = new Color(0.0F, 1.0F, 0.0F, 1.0F));
 			} else {
 				masks.ForEach(x => x.enabled = false);
 			}
@@ -43,7 +42,7 @@ public class WordController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (masks.TrueForAll(x => x.enabled)) {
-			maskComplete.enabled = true;
+			masks.ForEach(x => x.color = new Color(0.0F, 1.0F, 0.0F, 1.0F));
 		}
 	}
 }
