@@ -7,6 +7,7 @@ public class PlayerNPCInteraction : MonoBehaviour {
 	[SerializeField] private Camera camera;
 	[SerializeField] private GameObject player;
 	[SerializeField] private GameObject musicUI;
+	[SerializeField] private GameObject pressSpaceToTalk;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,15 @@ public class PlayerNPCInteraction : MonoBehaviour {
 			camera.GetComponent<CameraController>().MoveToThirdPerson();
 			player.GetComponent<SimpleCharacterControl>().start();
 			musicUI.SetActive (false);
+			pressSpaceToTalk.SetActive (true);
+		}
+		if(triggered && Input.GetButtonDown("Interact")) {
+			camera.GetComponent<CameraController>().MoveToFirstPerson();
+			player.GetComponent<SimpleCharacterControl>().stop();
+			musicUI.SetActive(true);
+
+			pressSpaceToTalk.SetActive (false);
+
 		}
 	}
 
@@ -30,9 +40,10 @@ public class PlayerNPCInteraction : MonoBehaviour {
 		if (!triggered && other.CompareTag("Player")) {
 			Debug.Log("Hello!");
 			triggered = true;
-			camera.GetComponent<CameraController>().MoveToFirstPerson();
-			player.GetComponent<SimpleCharacterControl>().stop();
-			musicUI.SetActive(true);
+//			camera.GetComponent<CameraController>().MoveToFirstPerson();
+//			player.GetComponent<SimpleCharacterControl>().stop();
+//			musicUI.SetActive(true);
+			pressSpaceToTalk.SetActive (true);
 		}
 	}
 	void OnTriggerStay(Collider other) {
@@ -45,6 +56,7 @@ public class PlayerNPCInteraction : MonoBehaviour {
 			camera.GetComponent<CameraController>().MoveToThirdPerson();
 			player.GetComponent<SimpleCharacterControl>().start();
 			musicUI.SetActive (false);
+			pressSpaceToTalk.SetActive (false);
 		}
 	}
 }

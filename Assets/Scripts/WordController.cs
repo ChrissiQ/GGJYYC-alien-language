@@ -9,6 +9,7 @@ public class WordController : MonoBehaviour {
 	public List<Image> symbols;
 	public List<AudioSource> sounds;
 	public bool known;
+	public GameObject answerText;
 
 	// Use this for initialization
 	void Start () {
@@ -59,6 +60,10 @@ public class WordController : MonoBehaviour {
 		if (symbols.TrueForAll(x => x.enabled)) {
 			this.known = true;
 			symbols.ForEach(x => x.color = new Color(0.0F, 1.0F, 0.0F, 1.0F));
+		}
+		if(this.known) {
+			// display word
+			answerText.SetActive(true);
 		}
 	}
 }
