@@ -1,4 +1,5 @@
-= Alien Language =
+# Alien Language
+
 Alien Language (working title) is a game made for the Global Game Jam 2018 theme "Transmission".
 
 Developers of this game were:
