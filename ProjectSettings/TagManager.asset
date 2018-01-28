@@ -8,6 +8,7 @@ TagManager:
   - tun-symbol
   - vero-symbol
   - cray-symbol
+  - Apple
   layers:
   - Default
   - TransparentFX
