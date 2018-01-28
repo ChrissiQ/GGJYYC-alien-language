@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000014, guid: 7187b6a434a9147afb72bec1c81a467a,
+  m_LightingDataAsset: {fileID: 112000014, guid: bdb2900e837b1419a8801d2f2d395dad,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -113,7 +113,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5584e3396e4304b028682d2b28d25f05, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1a0addac0acfe4a8f8b3cfae5b16bd5a, type: 2}
 --- !u!1001 &1675029
 Prefab:
   m_ObjectHideFlags: 0
