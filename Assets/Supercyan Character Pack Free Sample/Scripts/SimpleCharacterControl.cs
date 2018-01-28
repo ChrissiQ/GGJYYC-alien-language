@@ -37,6 +37,8 @@ public class SimpleCharacterControl : MonoBehaviour {
 
 	private NavMeshAgent agent;
 
+	private bool stopped = false;
+
 	void Start() {
 		agent = GetComponent<NavMeshAgent>();
 	}
@@ -97,20 +99,21 @@ public class SimpleCharacterControl : MonoBehaviour {
 	void Update () {
         m_animator.SetBool("Grounded", m_isGrounded);
 
-        switch(m_controlMode)
-        {
-            case ControlMode.Direct:
-                DirectUpdate();
-                break;
+		if(!stopped) {
+			switch (m_controlMode) {
+			case ControlMode.Direct:
+				DirectUpdate ();
+				break;
 
-            case ControlMode.Tank:
-                TankUpdate();
-                break;
+			case ControlMode.Tank:
+				TankUpdate ();
+				break;
 
-            default:
-                Debug.LogError("Unsupported state");
-                break;
-        }
+			default:
+				Debug.LogError ("Unsupported state");
+				break;
+			}
+		}
 
         m_wasGrounded = m_isGrounded;
     }
@@ -198,4 +201,11 @@ public class SimpleCharacterControl : MonoBehaviour {
             m_animator.SetTrigger("Jump");
         }
     }
+
+	public void stop() {
+		stopped = true;
+	}
+	public void start() {
+		stopped = false;
+	}
 }
