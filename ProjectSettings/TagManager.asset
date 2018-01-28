@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - omi-symbol
+  - tun-symbol
+  - vero-symbol
+  - cray-symbol
   - Apple
   layers:
   - Default

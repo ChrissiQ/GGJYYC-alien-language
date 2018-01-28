@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class toggle_mask : MonoBehaviour {
+public class SymbolController : MonoBehaviour {
 
-	public Image mask;
-	public GameObject[] words;
+	public Sprite symbol;
+	public string symbolName;
+	public string tagName;
+	public GameObject GameController;
 
 	// Use this for initialization
 	void Start () {
+		List<GameObject> words = GameController.GetComponent<GameController>().words;
 		Button button = GetComponent<Button>();
 		button.onClick.AddListener( () => {
 			foreach (GameObject word in words)
 			{
-				word.GetComponent<WordController>().EnablePartialMask(mask);
+				var wordController = word.GetComponent<WordController>();
+				wordController.EnableSymbolOnWord(tagName);
 			}
 		} );
 	}
