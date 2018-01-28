@@ -14,19 +14,55 @@ public class Pickup : MonoBehaviour {
         }
     }
 
-    void Pickups(Collider Player)
+    void Pickups(Collider player)
     {
-        if (CompareTag("Apple") || CompareTag("BlackFlower") || CompareTag("Disk") || CompareTag("Water") || CompareTag("Apple1"))
+        if (CompareTag("Apple"))
         {
-            Debug.Log("Item picked up!");
+            Debug.Log("Apple picked up!");
             // Spawn a cool effect when picked up
             GameObject test = (GameObject)Instantiate(pickUpEffect, transform.position, transform.rotation);
             Destroy(test, 3.0f);
             // Remove the power up object
             Destroy(gameObject);
             // Set the apple to true
-            Inventory pikedUp = Player.GetComponent<Inventory>();
+            Inventory pikedUp = player.GetComponent<Inventory>();
             pikedUp.apple = true;
+        }
+        else if (CompareTag("BlackFlower"))
+        {
+            Debug.Log("Black Flower picked up!");
+            // Spawn a cool effect when picked up
+            GameObject test = (GameObject)Instantiate(pickUpEffect, transform.position, transform.rotation);
+            Destroy(test, 3.0f);
+            // Remove the power up object
+            Destroy(gameObject);
+            // Set the apple to true
+            Inventory pikedUp = player.GetComponent<Inventory>();
+            pikedUp.blackFlower = true;
+        }
+        else if (CompareTag("Disk"))
+        {
+            Debug.Log("Disk picked up!");
+            // Spawn a cool effect when picked up
+            GameObject test = (GameObject)Instantiate(pickUpEffect, transform.position, transform.rotation);
+            Destroy(test, 3.0f);
+            // Remove the power up object
+            Destroy(gameObject);
+            // Set the apple to true
+            Inventory pikedUp = player.GetComponent<Inventory>();
+            pikedUp.disk = true;
+        }
+        else if (CompareTag("Water"))
+        {
+            Debug.Log("Water picked up!");
+            // Spawn a cool effect when picked up
+            GameObject test = (GameObject)Instantiate(pickUpEffect, transform.position, transform.rotation);
+            Destroy(test, 3.0f);
+            // Remove the power up object
+            Destroy(gameObject);
+            // Set the apple to true
+            Inventory pikedUp = player.GetComponent<Inventory>();
+            pikedUp.water = true;
         }
     }
 
