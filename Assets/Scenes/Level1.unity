@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 346026552}
   player: {fileID: 1944796412}
+  musicUI: {fileID: 348387817}
 --- !u!1001 &158850296
 Prefab:
   m_ObjectHideFlags: 0
@@ -466,6 +467,11 @@ MonoBehaviour:
   target: {fileID: 1944796417}
   offset: {x: 0, y: -0.3, z: 0.3}
   pitch: 2
+--- !u!1 &348387817 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1137819137186002, guid: fe00e2740a705483cb72c2989d8fd35b,
+    type: 2}
+  m_PrefabInternal: {fileID: 570133275}
 --- !u!224 &348387821 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224021190055864044, guid: fe00e2740a705483cb72c2989d8fd35b,
