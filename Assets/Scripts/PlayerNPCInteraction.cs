@@ -9,6 +9,7 @@ public class PlayerNPCInteraction : MonoBehaviour {
 	[SerializeField] private GameObject musicUI;
 	[SerializeField] private GameObject pressSpaceToTalk;
 	[SerializeField] private GameObject thankYouText;
+	[SerializeField] private GameObject magicRock;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,8 @@ public class PlayerNPCInteraction : MonoBehaviour {
 			} else {
 				// say thank you
 				thankYouText.SetActive(true);
+
+				magicRock.GetComponent<GuardPass> ().guardGo = true;
 
 				pressSpaceToTalk.SetActive (false);
 				// open bridge
