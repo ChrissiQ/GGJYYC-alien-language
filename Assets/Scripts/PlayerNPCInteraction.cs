@@ -8,6 +8,7 @@ public class PlayerNPCInteraction : MonoBehaviour {
 	[SerializeField] private GameObject player;
 	[SerializeField] private GameObject musicUI;
 	[SerializeField] private GameObject pressSpaceToTalk;
+	[SerializeField] private GameObject thankYouText;
 
 	// Use this for initialization
 	void Start () {
@@ -22,14 +23,24 @@ public class PlayerNPCInteraction : MonoBehaviour {
 			camera.GetComponent<CameraController>().MoveToThirdPerson();
 			player.GetComponent<SimpleCharacterControl>().start();
 			musicUI.SetActive (false);
-			pressSpaceToTalk.SetActive (true);
+			//pressSpaceToTalk.SetActive (true);
+			thankYouText.SetActive(false);
 		}
 		if(triggered && Input.GetButtonDown("Interact")) {
-			camera.GetComponent<CameraController>().MoveToFirstPerson();
-			player.GetComponent<SimpleCharacterControl>().stop();
-			musicUI.SetActive(true);
+			Inventory pickup = player.GetComponent<Inventory> ();
+			if(!pickup.apple) {
+				camera.GetComponent<CameraController> ().MoveToFirstPerson ();
+				player.GetComponent<SimpleCharacterControl> ().stop ();
+				musicUI.SetActive (true);
 
-			pressSpaceToTalk.SetActive (false);
+				pressSpaceToTalk.SetActive (false);
+			} else {
+				// say thank you
+				thankYouText.SetActive(true);
+
+				pressSpaceToTalk.SetActive (false);
+				// open bridge
+			}
 
 		}
 	}
