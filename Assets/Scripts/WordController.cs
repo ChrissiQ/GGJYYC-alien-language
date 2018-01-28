@@ -7,6 +7,7 @@ using System.Linq;
 public class WordController : MonoBehaviour {
 
 	public List<Image> symbols;
+	public List<AudioSource> sounds;
 	public bool known;
 
 	// Use this for initialization
@@ -40,6 +41,16 @@ public class WordController : MonoBehaviour {
 					symbols.ForEach(x => x.enabled = false);
 				}
 			}
+		}
+	}
+
+	public void PlayFullSound(){
+		StartCoroutine(PlayAll());
+	}
+	private IEnumerator PlayAll(){
+		foreach (AudioSource a in sounds) {
+			a.Play ();
+			yield return new WaitForSeconds(a.clip.length);
 		}
 	}
 	
