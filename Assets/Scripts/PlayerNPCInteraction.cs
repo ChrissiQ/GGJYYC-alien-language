@@ -39,10 +39,10 @@ public class PlayerNPCInteraction : MonoBehaviour {
 				// say thank you
 				thankYouText.SetActive(true);
 
+				// open bridge
 				magicRock.GetComponent<GuardPass> ().guardGo = true;
 
 				pressSpaceToTalk.SetActive (false);
-				// open bridge
 			}
 
 		}
@@ -71,6 +71,7 @@ public class PlayerNPCInteraction : MonoBehaviour {
 			player.GetComponent<SimpleCharacterControl>().start();
 			musicUI.SetActive (false);
 			pressSpaceToTalk.SetActive (false);
+			thankYouText.SetActive (false);
 		}
 	}
 }
