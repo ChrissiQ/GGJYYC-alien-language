@@ -15,6 +15,7 @@ public class SymbolController : MonoBehaviour {
 		List<GameObject> words = GameController.GetComponent<GameController>().words;
 		Button button = GetComponent<Button>();
 		button.onClick.AddListener( () => {
+			Debug.Log("hi");
 			foreach (GameObject word in words)
 			{
 				var wordController = word.GetComponent<WordController>();

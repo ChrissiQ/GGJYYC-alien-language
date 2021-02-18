@@ -22,4 +22,14 @@ public class CameraController : MonoBehaviour {
 		// Orient camera to look at back of player's head.
 		transform.LookAt(target.position + Vector3.up * pitch);
 	}
+
+	public void MoveToFirstPerson() {
+		pitch = 1;
+		offset = new Vector3 (0, -0.1f, 0);
+	}
+
+	public void MoveToThirdPerson() {
+		pitch = 2;
+		offset = new Vector3 (0, -0.3f, 0.3f);
+	}
 }
